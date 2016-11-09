@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Dictionary</h1>
+<script src="dictionary.js" type="text/javascript"></script>
+        <link href="dictionary.css" type="text/css" rel="stylesheet">
+        <base href="https://ide.c9.io/paulscf/info2180-lab6">
+
+<button type="button" onclick="loadDoc()">Search</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "request.php", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+<!--<script>	
+	(function () {
+  var httpRequest;
+  document.getElementById("demo").onclick = function() { makeRequest('request.php'); };
+
+  function makeRequest(url) {
+    httpRequest = new XMLHttpRequest();
+
+    if (!httpRequest) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+    httpRequest.onreadystatechange = alertContents;
+    httpRequest.open('GET', url);
+    httpRequest.send();
+  }
+
+  function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        alert(httpRequest.responseText);
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+})();
+</script>	-->
+	
+
+
+   <!-- <div class="container">
+      <h1>AJAX Examples</h1>
+      <p>Below are links to some simple examples demonstrating AJAX.</p>
+      <ol>
+        <li><a href="https://info2180-lab6-paulscf.c9users.io/request.php?q=definition">Simple Example using Plain JavaScript</a></li>
+        <!--<li><a href="simple-jquery-ajax.php">Simple Example using jQuery</a></li>
+        <li><a href="simple-post.php">Simple AJAX POST request using Plain JavaScript</a></li>
+        <li><a href="xml-example.php">Example of using AJAX with XML data using Plain JavaScript</a></li>
+        <li><a href="jquery-xml-example.php">Example of using AJAX with XML data using jQuery</a></li>
+        <li><a href="json-example.php">Example of using AJAX with JSON data using jQuery</a></li>
+        <li><a href="no-refresh-example.php">Example of using AJAX to build a simple website with no page refreshes</a></li>
+      </ol>
+    </div>
+  </body>
+</html>-->
+
